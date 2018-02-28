@@ -5,6 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# spree gems
+gem 'spree', '~> 3.4.4'
+gem 'spree_auth_devise', '~> 3.3'
+gem 'spree_gateway', '~> 3.3'
+gem 'spree_i18n', github: 'spree-contrib/spree_i18n'
+gem 'spree_globalize', github: 'spree-contrib/spree_globalize', branch: 'master'
+
+# for setting env variables
+gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.5'
@@ -48,6 +57,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
